@@ -1,5 +1,5 @@
 <div class="my-4 mx-2">
-  {% paginate collection.products by section.settings.items_per_page %}
+  {% paginate collection.products by section.settings.number_of_products_per_page %}
     <h1 class="text-2xl font-bold">{{ collection.title }}</h1>
 
     <div class="max-w-7xl ">
@@ -22,14 +22,15 @@
 {% schema %}
 {
   "name": "Template Collection",
-  "settings": [],
-  "blocks": [
+  "settings": [
     {
-      "type": "items_per_page",
-      "name": "Items per page",
-      "limit": 1
+      "type": "number",
+      "id":"number_of_products_per_page", 
+      "default": 6, 
+      "label": "Number of products per page"
     }
   ],
+  "blocks": [],
   "presets": [
     {
       "name": "Template Collection"
