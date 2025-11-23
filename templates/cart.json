@@ -12,6 +12,10 @@
     "template": {
       "type": "template-cart",
       "blocks": {
+        "subtotal": {
+          "type": "subtotal",
+          "settings": {}
+        },
         "checkout_button_YUHDVd": {
           "type": "checkout_button",
           "settings": {}
@@ -19,16 +23,12 @@
         "update_button_3kTf4F": {
           "type": "update_button",
           "settings": {}
-        },
-        "subtotal": {
-          "type": "subtotal",
-          "settings": {}
         }
       },
       "block_order": [
+        "subtotal",
         "checkout_button_YUHDVd",
-        "update_button_3kTf4F",
-        "subtotal"
+        "update_button_3kTf4F"
       ],
       "settings": {}
     }
