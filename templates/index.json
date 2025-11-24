@@ -20,7 +20,9 @@
     "contact_form_r9cFxr": {
       "type": "contact-form",
       "name": "Contact Form",
-      "settings": {}
+      "settings": {
+        "title": "Contact Form"
+      }
     }
   },
   "order": [
