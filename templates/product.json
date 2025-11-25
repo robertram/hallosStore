@@ -24,7 +24,7 @@
           "type": "vendor",
           "settings": {}
         },
-        "variant_selector_Yg4VUL": {
+        "variant_selector": {
           "type": "variant_selector",
           "settings": {}
         },
@@ -45,7 +45,7 @@
         "title_wiiXpQ",
         "price_HHih3P",
         "vendor_6VfWPH",
-        "variant_selector_Yg4VUL",
+        "variant_selector",
         "quantity_xYH7yi",
         "description_B34YYH",
         "checkout_buttons_pDQUr6"
