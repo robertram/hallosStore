@@ -324,6 +324,9 @@
   .h-full {
     height: 100%;
   }
+  .h-min {
+    height: min-content;
+  }
   .w-16 {
     width: calc(var(--spacing) * 16);
   }
@@ -472,6 +475,9 @@
   }
   .border-red-200 {
     border-color: var(--color-red-200);
+  }
+  .border-red-600 {
+    border-color: var(--color-red-600);
   }
   .border-white {
     border-color: var(--color-white);
@@ -793,6 +799,11 @@
   .md\:my-16 {
     @media (width >= 48rem) {
       margin-block: calc(var(--spacing) * 16);
+    }
+  }
+  .md\:block {
+    @media (width >= 48rem) {
+      display: block;
     }
   }
   .md\:flex {
