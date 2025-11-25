@@ -55,76 +55,93 @@
 
     <div class="product--information">
       {% form 'product', product %}
-        <input type="number" name="id" value="{{ selected_variant.id }}">
-        <div class="my-3">
-          <p class="text-xs text-gray-500">{{ product.vendor }}</p>
-          <h1 class="text-3xl">{{ product.title }}</h1>
-          <div class="flex">
-            {% assign product_price = selected_variant %}
-            <p class="text-xl line-through">{{ product_price.compare_at_price | money }}</p>
-            <span class="ml-2 text-lg text-gray-900"> {{ product_price.price | money }}</span>
-            {% if product_price.price < product_price.compare_at_price %}
-              <span class="px-5 py-1 text-sm font-bold bg-red-500 rounded-full text-white mx-4">Sale</span>
-            {% endif %}
-          </div>
+        <input type="hidden" name="id" value="{{ selected_variant.id }}">
 
-          <div class="my-3">
-            {% unless product.has_only_default_variant %}
-              <div data-url="{{ product.url }}" data-section="{{ section.id }}">
-                {% for option in product.options_with_values %}
-                  <label for="Option-{{ section.id }}-{{ forloop.index0 }}">{{ option.name }}</label>
-                  <div class="my-2">
-                    <select
-                      name="options[{{ option.name | escape }}]"
-                      id="Option-{{ section.id }}-{{ forloop.index0 }}"
-                      class="w-full border py-1 px-3"
-                    >
-                      {% for value in option.values %}
-                        <option
-                          value="{{ value | escape }}"
-                          {% if option.selected_value == value %}
-                            selected="selected"
-                          {% endif %}
-                        >
-                          {{ value }}
-                        </option>
-                      {% endfor %}
-                    </select>
-                  </div>
-                {% endfor %}
+        {% for block in section.blocks %}
+          {% case block.type %}
+            {% when 'vendor' %}
+              <div class="my-3">
+                <p class="text-xs text-gray-500">{{ product.vendor }}</p>
               </div>
-            {% endunless %}
-          </div>
+            {% when 'title' %}
+              <h1 class="text-3xl">{{ product.title }}</h1>
+            {% when 'price' %}
+              <div class="flex">
+                {% assign product_price = selected_variant %}
+                <p class="text-xl line-through">{{ product_price.compare_at_price | money }}</p>
+                <span class="ml-2 text-lg text-gray-900"> {{ product_price.price | money }}</span>
+                {% if product_price.price < product_price.compare_at_price %}
+                  <span class="px-5 py-1 text-sm font-bold bg-red-500 rounded-full text-white mx-4">Sale</span>
+                {% endif %}
+              </div>
 
-          <div class="my-3">
-            <label for="Quantity-{{ section.id }}">Quantity</label>
-            <div class="my-2">
-              <input type="number" name="quantity" id="Quantity-{{ section.id }}" value="1" min="1">
-            </div>
-          </div>
+            {% when 'variant' %}
+              <div class="my-3">
+                {% unless product.has_only_default_variant %}
+                  <div data-url="{{ product.url }}" data-section="{{ section.id }}">
+                    {% for option in product.options_with_values %}
+                      <label for="Option-{{ section.id }}-{{ forloop.index0 }}">{{ option.name }}</label>
+                      <div class="my-2">
+                        <select
+                          name="options[{{ option.name | escape }}]"
+                          id="Option-{{ section.id }}-{{ forloop.index0 }}"
+                          class="w-full border py-1 px-3"
+                        >
+                          {% for value in option.values %}
+                            <option
+                              value="{{ value | escape }}"
+                              {% if option.selected_value == value %}
+                                selected="selected"
+                              {% endif %}
+                            >
+                              {{ value }}
+                            </option>
+                          {% endfor %}
+                        </select>
+                      </div>
+                    {% endfor %}
+                  </div>
+                {% endunless %}
+              </div>
 
-          <div class="my-3">
-            <p class="text-gray-700">{{ product.description }}</p>
-          </div>
+            {% when 'quantity' %}
+              <div class="my-3">
+                <label for="Quantity-{{ section.id }}">Quantity</label>
+                <div class="my-2">
+                  <input type="number" name="quantity" id="Quantity-{{ section.id }}" value="1" min="1">
+                </div>
+              </div>
 
-          <div class="my-3">
-            <button
-              type="submit"
-              name="add"
-              id=""
-              {% if selected_variant == false %}
-                disabled
-              {% endif %}
-              class="w-full px-6 py-4 bg-gray-900 text-white hover:bg-gray-500 cursor-pointer"
-            >
-              {% if selected_variant.available == false %}
-                Sold out
-              {% else %}
-                Add to cart
-              {% endif %}
-            </button>
-          </div>
-        </div>
+            {% when 'description' %}
+              <div class="my-3">
+                <p class="text-gray-700">{{ product.description }}</p>
+              </div>
+
+            {% when 'checkout_buttons' %}
+              <div class="my-3">
+                <button
+                  type="submit"
+                  name="add"
+                  id=""
+                  {% if selected_variant == false %}
+                    disabled
+                  {% endif %}
+                  class="w-full px-6 py-4 bg-gray-900 text-white hover:bg-gray-500 cursor-pointer"
+                >
+                  {% if selected_variant.available == false %}
+                    Sold out
+                  {% else %}
+                    Add to cart
+                  {% endif %}
+                </button>
+              </div>
+
+            {% else %}
+
+          {% endcase %}
+        {% endfor %}
+
+        <div class="my-3"></div>
       {% endform %}
     </div>
   </div>
@@ -173,12 +190,12 @@
       "type": "quantity",
       "name": "Quantity",
       "limit": 1
-    }, 
+    },
     {
       "type": "description",
       "name": "Description",
       "limit": 1
-    }, 
+    },
     {
       "type": "checkout_buttons",
       "name": "Checkout Buttons",
