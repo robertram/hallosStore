@@ -1,39 +1,56 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "template": {
       "type": "template-product",
       "blocks": {
-        "vendor": {
-          "type": "vendor"
+        "title_wiiXpQ": {
+          "type": "title",
+          "settings": {}
         },
-        "title": {
-          "type": "title"
+        "price_HHih3P": {
+          "type": "price",
+          "settings": {}
         },
-        "price": {
-          "type": "price"
+        "vendor_6VfWPH": {
+          "type": "vendor",
+          "settings": {}
         },
-        "variant_selector": {
-          "type": "variant_selector"
+        "variant_selector_Yg4VUL": {
+          "type": "variant_selector",
+          "settings": {}
         },
-        "quantity": {
-          "type": "quantity"
+        "quantity_xYH7yi": {
+          "type": "quantity",
+          "settings": {}
         },
-        "description": {
-          "type": "description"
+        "description_B34YYH": {
+          "type": "description",
+          "settings": {}
         },
-        "checkout_buttons": {
-          "type": "checkout_buttons"
+        "checkout_buttons_pDQUr6": {
+          "type": "checkout_buttons",
+          "settings": {}
         }
       },
-      "order": [
-        "vendor",
-        "title",
-        "price",
-        "variant_selector",
-        "quantity",
-        "description",
-        "checkout_buttons"
-      ]
+      "block_order": [
+        "title_wiiXpQ",
+        "price_HHih3P",
+        "vendor_6VfWPH",
+        "variant_selector_Yg4VUL",
+        "quantity_xYH7yi",
+        "description_B34YYH",
+        "checkout_buttons_pDQUr6"
+      ],
+      "settings": {}
     }
   },
   "order": [
