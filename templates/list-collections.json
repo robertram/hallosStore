@@ -11,10 +11,22 @@
   "sections": {
     "template": {
       "type": "template-list-collections",
-      "settings": {}
+      "settings": {
+        "title": "Collections"
+      }
+    },
+    "featured_collection_NdVB8B": {
+      "type": "featured-collection",
+      "name": "Featured Collection",
+      "settings": {
+        "title": "Featured Collection",
+        "featured_collection": "",
+        "number_of_products_to_show": 4
+      }
     }
   },
   "order": [
-    "template"
+    "template",
+    "featured_collection_NdVB8B"
   ]
 }
