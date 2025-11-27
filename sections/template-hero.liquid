@@ -1,0 +1,26 @@
+<div class="flex h-[500px] mx-2">
+  <div class="w-1/2 border-green-400 border">
+  
+  <img src="{{ section.settings.image_with_text_image | image_url }}" alt="{{ section.settings.image_with_text_image.alt | default: section.settings.title }}"/>
+  
+  </div>
+  <div class="w-1/2 border border-red-400">{{ section.settings.title }}</div>
+</div>
+
+{% schema %}
+{
+  "name": "Template Hero", 
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    }, 
+    {
+      "type": "image_picker",
+      "id": "image_with_text_image",
+      "label": "Image"
+    }
+  ]
+}
+{% endschema %}
