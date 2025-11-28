@@ -9,6 +9,20 @@
  */
 {
   "sections": {
+    "template_hero": {
+      "type": "template-hero",
+      "name": "Hero",
+      "settings": {
+        "title": "La mejor tienda online",
+        "image_with_text_image": "shopify://shop_images/hero_02.avif",
+        "description": "<p>Discover our curated collection of premium essentials, handpicked from around the world. Elevate your style with pieces designed for the modern aesthetic.</p>",
+        "list_items": "Compra tu ropa de navidad\nDesde la comodidad de tu casa\nDesde tu celular",
+        "primary_cta_text": "Go to Google",
+        "primary_cta_link": "https://google.com",
+        "secondary_cta_text": "Go to Amazon",
+        "secondary_cta_link": "https://amazon.com"
+      }
+    },
     "featured-collection": {
       "type": "featured-collection",
       "settings": {
@@ -23,25 +37,11 @@
       "settings": {
         "title": "Contact Form"
       }
-    },
-    "template_hero": {
-      "type": "template-hero",
-      "name": "Hero",
-      "settings": {
-        "title": "La mejor tienda online",
-        "image_with_text_image": "shopify://shop_images/hero_02.avif",
-        "content": "<p>Discover our curated collection of premium essentials, handpicked from around the world. Elevate your style with pieces designed for the modern aesthetic.asd</p>",
-        "list_items": "Compra tu ropa de navidad\nDesde la comodidad de tu casa\nDesde tu celular",
-        "primary_cta_text": "Go to Google",
-        "primary_cta_link": "https://google.com",
-        "secondary_cta_text": "Go to Amazon",
-        "secondary_cta_link": "https://amazon.com"
-      }
     }
   },
   "order": [
+    "template_hero",
     "featured-collection",
-    "contact_form_r9cFxr",
-    "template_hero"
+    "contact_form_r9cFxr"
   ]
 }
