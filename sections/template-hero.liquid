@@ -1,25 +1,57 @@
-<div class="flex h-[500px] mx-2">
-  <div class="w-1/2 border-green-400 border">
-  
-  <img src="{{ section.settings.image_with_text_image | image_url }}" alt="{{ section.settings.image_with_text_image.alt | default: section.settings.title }}"/>
-  
+<div class="flex justify-between max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full my-12">
+  <div class=" border-green-400 border">
+    <img
+      class="w-[500px] h-[500px] object-cover rounded-sm"
+      src="{{ section.settings.image_with_text_image | image_url }}"
+      alt="{{ section.settings.image_with_text_image.alt | default: section.settings.title }}"
+    >
   </div>
-  <div class="w-1/2 border border-red-400">{{ section.settings.title }}</div>
+  <div class="w-1/2">
+    <p class="text-sm uppercase text-amber-800 border-l-2 border-amber-800 pl-4 font-bold">New Arrival</p>
+
+    <h2 class="text-6xl font-bold my-4">{{ section.settings.title }}</h2>
+
+    <p class="text-xl text-gray-500">
+      {{ section.settings.description }}
+    </p>
+
+    <ul class="my-4">
+      <li class="text-md my-2">✓ Premium quality materials</li>
+      <li class="text-md my-2">✓ Sustainable production</li>
+      <li class="text-md my-2">✓ Worldwide shipping</li>
+    </ul>
+
+    <div class="flex ">
+      <button class="mr-4 bg-black px-4 py-2 rounded-md text-white text-sm">Shop Collection</button>
+      <button class=" bg-white border-black border-2 px-4 py-2 rounded-md text-black text-sm font-bold">Learn More</button>
+    </div>
+  </div>
 </div>
 
 {% schema %}
 {
-  "name": "Template Hero", 
+  "name": "Template Hero",
   "settings": [
     {
       "type": "text",
       "id": "title",
       "label": "Title"
-    }, 
+    },
     {
       "type": "image_picker",
       "id": "image_with_text_image",
       "label": "Image"
+    }, 
+    {
+      "type": "richtext",
+      "id": "content",
+      "label": "Description",
+      "default": "Discover our curated collection of premium essentials, handpicked from around the world. Elevate your style with pieces designed for the modern aesthetic."
+    }, 
+    {
+      "type": "textarea",
+      "id": "list_items",
+      "label": "List items (one per line)"
     }
   ]
 }
