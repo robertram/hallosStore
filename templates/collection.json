@@ -14,9 +14,17 @@
       "settings": {
         "number_of_products_per_page": 2
       }
+    },
+    "contact_form_aH9DYX": {
+      "type": "contact-form",
+      "name": "Contact Form",
+      "settings": {
+        "title": "Contacto"
+      }
     }
   },
   "order": [
-    "template"
+    "template",
+    "contact_form_aH9DYX"
   ]
 }
