@@ -14,7 +14,7 @@
         "type": "header",
         "settings": {
           "mobile_menu_title": "Hallos Clothes",
-          "menu": "main-menu"
+          "menu": "backup-menu"
         }
       },
       "homepage": {
