@@ -21,13 +21,15 @@
       {% for block in section.blocks %}
         {% case block.type %}
           {% when 'impact-card' %}
-            {% render 'impact-card' %}
+            {% render 'impact-card', impact: block.settings  %}
         {% endcase %}
       {% endfor %}
 
-      {% comment %} {% render 'impact-card' %}
-      {% render 'impact-card' %}
-      {% render 'impact-card' %} {% endcomment %}
+      {% comment %}
+        {% render 'impact-card' %}
+        {% render 'impact-card' %}
+        {% render 'impact-card' %}
+      {% endcomment %}
 
       {% comment %}
         {stats.map((stat, index) => (
@@ -68,7 +70,21 @@
     {
       "type": "impact-card",
       "name": "Impact Card",
-      "limit": 3
+      "limit": 3,
+      "settings": [
+        {
+          "type": "text",
+          "id": "stats",
+          "label": "Stats",
+          "default": "+400,000"
+        }, 
+        {
+          "type": "text",
+          "id": "description",
+          "label": "Description",
+          "default": "Chocolate bars given"
+        }
+      ]
     }
   ]
 }
