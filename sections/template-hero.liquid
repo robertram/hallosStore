@@ -1,3 +1,5 @@
+{% assign items = section.settings.list_items | newline_to_br | split: '<br />' %}
+
 <div class="flex justify-between max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full my-12">
   <div class=" border-green-400 border">
     <img
@@ -15,15 +17,27 @@
       {{ section.settings.description }}
     </p>
 
+    {% comment %}
+      <ul class="my-4">
+        <li class="text-md my-2">✓ Premium quality materials</li>
+        <li class="text-md my-2">✓ Sustainable production</li>
+        <li class="text-md my-2">✓ Worldwide shipping</li>
+      </ul>
+    {% endcomment %}
+
     <ul class="my-4">
-      <li class="text-md my-2">✓ Premium quality materials</li>
-      <li class="text-md my-2">✓ Sustainable production</li>
-      <li class="text-md my-2">✓ Worldwide shipping</li>
+      {% for item in items %}
+        {% unless item == blank %}
+          <li class="text-md my-2">✓ {{ item }}</li>
+        {% endunless %}
+      {% endfor %}
     </ul>
 
     <div class="flex ">
       <button class="mr-4 bg-black px-4 py-2 rounded-md text-white text-sm">Shop Collection</button>
-      <button class=" bg-white border-black border-2 px-4 py-2 rounded-md text-black text-sm font-bold">Learn More</button>
+      <button class=" bg-white border-black border-2 px-4 py-2 rounded-md text-black text-sm font-bold">
+        Learn More
+      </button>
     </div>
   </div>
 </div>
@@ -41,13 +55,13 @@
       "type": "image_picker",
       "id": "image_with_text_image",
       "label": "Image"
-    }, 
+    },
     {
       "type": "richtext",
       "id": "content",
       "label": "Description",
-      "default": "Discover our curated collection of premium essentials, handpicked from around the world. Elevate your style with pieces designed for the modern aesthetic."
-    }, 
+      "default": "<p>Discover our curated collection of premium essentials, handpicked from around the world. Elevate your style with pieces designed for the modern aesthetic.</p>"
+    },
     {
       "type": "textarea",
       "id": "list_items",
