@@ -23,6 +23,13 @@
         "secondary_cta_link": "https://amazon.com"
       }
     },
+    "template_impact":{
+      "type":"template-impact", 
+      "name":"Template Impact", 
+      "settings":{
+
+      }
+    },
     "featured-collection": {
       "type": "featured-collection",
       "settings": {
@@ -42,6 +49,7 @@
   "order": [
     "template_hero",
     "featured-collection",
-    "contact_form_r9cFxr"
+    "contact_form_r9cFxr", 
+    "template_impact"
   ]
 }
