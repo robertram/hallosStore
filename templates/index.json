@@ -28,7 +28,10 @@
       "name":"Template Impact", 
       "settings":{
 
-      }
+      }, 
+      "block_order":[
+        "impact-card"
+      ]
     },
     "featured-collection": {
       "type": "featured-collection",
